@@ -3,20 +3,23 @@ import { usePottery } from "./PotteryCatalog.js";
 
 
 export const PotteryList = () => {
-    const pottery = usePottery()
-  let HTMLString = ``;
+  const clay = usePottery()
+  let htmlString = ``;
 
-  for (const clay of pottery) {
-    HTMLString += `
-<section class="pottery" id="${clay.id}">
-<h2 class="${clay.shape}">Mug</h2>
-<div class="pottery__properties">
-    Item weighs ${clay.weight} grams and is ${clay.height} cm in height
-</div>
-<div class="pottery__price">Price is $${clay.price}</div>
+  for (const pottery of clay) {
+    
+    htmlString += `
+    <section class="pottery" id="pottery--${pottery.id}">
+    <h2 class="pottery__shape">${pottery.shape}</h2>
+    <div class="pottery__properties">
+    Item weighs ${pottery.weight} grams and is ${pottery.height} cm in height
+    </div>
+    <div class="pottery__price">Price is $${pottery.price}</div>
+    </section>`
+  }  
+  
+  return htmlString;
 
-        `;
-  }
-  HTMLString += `</section>`
-  return HTMLString;
 };
+
+

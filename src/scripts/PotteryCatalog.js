@@ -1,18 +1,18 @@
 
 
 let potteryArr = [];
-let potteryArr1 = [];
+
 
 export const toSellOrNotToSell = (object) => {
+  if (object.cracked === false) {
   
     if (object.weight >= 6) {
       object.price = 40;
     } else if (object.weight < 6) {
       object.price = 20;
-    }
-    if (object.cracked === false) {
-    potteryArr.push(object);
+    }  potteryArr.push(object);
   }
+    return object
 };
 
 export const usePottery = () => {
